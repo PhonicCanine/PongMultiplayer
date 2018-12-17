@@ -1,0 +1,10 @@
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\win-x64\PongServer.deps.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\win-x64\PongServer.runtimeconfig.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\win-x64\PongServer.runtimeconfig.dev.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\win-x64\PongServer.dll
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\win-x64\PongServer.pdb
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\win-x64\PongServer.csproj.CoreCompileInputs.cache
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\win-x64\PongServer.AssemblyInfoInputs.cache
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\win-x64\PongServer.AssemblyInfo.cs
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\win-x64\PongServer.dll
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\win-x64\PongServer.pdb

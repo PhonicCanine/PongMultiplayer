@@ -1,0 +1,33 @@
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.deps.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.dev.json
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.dll
+C:\Users\josep\source\repos\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.pdb
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csprojAssemblyReference.cache
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csproj.CoreCompileInputs.cache
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfoInputs.cache
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfo.cs
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.dll
+C:\Users\josep\source\repos\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.pdb
+F:\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.deps.json
+F:\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.json
+F:\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.dev.json
+F:\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.dll
+F:\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.pdb
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csprojAssemblyReference.cache
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csproj.CoreCompileInputs.cache
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfoInputs.cache
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfo.cs
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.dll
+F:\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.pdb
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.deps.json
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.json
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.runtimeconfig.dev.json
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.dll
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\bin\Release\netcoreapp2.1\PongServer.pdb
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csprojAssemblyReference.cache
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.csproj.CoreCompileInputs.cache
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfoInputs.cache
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.AssemblyInfo.cs
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.dll
+C:\Users\josep\OneDrive\Software year 11\PongServer\PongServer\obj\Release\netcoreapp2.1\PongServer.pdb

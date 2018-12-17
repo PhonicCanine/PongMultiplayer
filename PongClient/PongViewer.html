@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js A simple Demo</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/vendors/easings.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/vendors/scrolloverflow.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.js"></script>
+
+	<style type="text/css">
+		
+		@font-face {
+			font-family: '01-Digit';
+		    src:  url('01-Digit.ttf.woff') format('woff'),
+		    url('01-Digit.ttf.svg#01-Digit') format('svg'),
+		    url('01-Digit.ttf.eot'),
+		    url('01-Digit.eot?#iefix') format('embedded-opentype'); 
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		body{
+			position: fixed;
+			height: 1%;
+			margin: 0;
+			padding: 0;
+			overflow:hidden;
+		}
+
+
+		.alignCenter {
+			height: 100%;
+			width: 100%;
+			top: 100px;
+			line-height: all;
+
+			text-align: center;
+			position: fixed;
+			z-index: 100;
+
+			display: inline-block;
+			vertical-align: middle;
+			/*line-height: normal;*/
+			font-family: '01-Digit';
+			font-size: 125px;
+			color: white;
+			text-overflow: ellipsis;
+
+		}
+
+        .alignRight {
+			height: 100%;
+			width: 90%;
+			top: 100px;
+            left:5%;
+			line-height: all;
+
+			text-align: right;
+			position: fixed;
+			z-index: 50;
+
+			display: inline-block;
+			vertical-align: middle;
+			/*line-height: normal;*/
+			font-family: '01-Digit';
+			font-size: 125px;
+			color: white;
+			text-overflow: ellipsis;
+
+		}
+
+        .alignLeft {
+			height: 100%;
+			width: 90%;
+            left:5%;
+			top: 100px;
+			line-height: all;
+
+			text-align: left;
+			position: fixed;
+			z-index: 50;
+
+			display: inline-block;
+			vertical-align: middle;
+			/*line-height: normal;*/
+			font-family: '01-Digit';
+			font-size: 125px;
+			color: white;
+			text-overflow: ellipsis;
+
+		}
+
+	#queuePosition{
+		display: none;
+	}
+
+    #leftLabel{
+        opacity: 1;
+    }
+
+    #rightLabel{
+        opacity: 1;
+    }
+
+	</style>
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section active" id="section0">
+		<div class="alignCenter" id="theBlock" onclick="joinClicked()" style="text-decoration: underline;"><span style="margin: 10px;">Join Queue</span></div>
+        <div class="alignLeft" id="leftLabel">Current Champion</div>
+        <div class="alignRight" id="rightLabel">Contester</div>
+		<canvas width="100%" height="100%" id="gameBoard" style="position: fixed; top: 0;"></canvas>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	
+	var gameBoard = document.getElementById("gameBoard");
+	console.log(window)
+
+	gameBoard.width = window.innerWidth;
+	gameBoard.height = window.innerHeight;
+	
+	var h = parseInt(gameBoard.getAttribute("height"));
+	var w = parseInt(gameBoard.getAttribute("width"));
+	var gameBoard2D = gameBoard.getContext('2d');
+	var playerWidth = 15
+	var playerHeight = 100
+
+	player1Position = 100
+	player2Position = 100
+
+	var player1 = gameBoard.getContext("2d");
+	var player2=gameBoard.getContext("2d");
+    var ball = gameBoard.getContext("2d");
+
+
+	var borderWidth = 15
+
+	var player1Y = 50
+	var player1DY = 0
+	var player2Y = 50
+	var player2DY = 0
+	var ballPosition = {
+		x: 50,
+		y: 50,
+		dy: 0,
+		dx: 0
+	}
+
+	var paddleOffset = 5
+
+	var player1StartX, player1StartY, player2StartY, player2StartX, ballSize
+
+
+	setupBoard()
+
+
+
+
+    function setupBoard(){
+
+    	player1StartX = ((window.innerWidth - 2 * borderWidth) / 100 * paddleOffset ) - playerWidth
+    	player1StartY = ((window.innerHeight - 2 * borderWidth) - playerHeight)*(player1Y/100) + borderWidth
+
+   		player2StartY = ((window.innerHeight - 2 * borderWidth) - playerHeight)*(player2Y/100) + borderWidth
+		player2StartX = ((window.innerWidth - 2 * borderWidth) / 100 * (100 - paddleOffset) ) + (playerWidth + borderWidth)
+
+
+		ballSize = 5 * ((window.innerHeight - 2 * borderWidth)/100)
+
+		var ballPositionX = ((window.innerWidth - 2 * borderWidth) - ballSize / 2) * ((ballPosition.x)/100)
+		var ballPositionY = ((window.innerHeight - 2 * borderWidth) - ballSize / 2) * ((ballPosition.y)/100)
+
+		gameBoard2D.fillStyle = "black";
+	    gameBoard2D.fillRect(0+borderWidth,0+borderWidth,w-2*borderWidth,h-2*borderWidth);
+	    gameBoard.style.opacity = '1';
+
+	    // var player1 = gameBoard.getContext("2d");
+
+		// player1.fillRect(player1StartX,player1StartY,player1StartX+playerWidth,player1StartX+playerHeight)
+		// player1.fillStyle = "white";
+		// // player1.stroke();
+
+		player1.fillStyle="#FFF";
+		player1.lineWidth = 1
+		player1.fillRect(player1StartX,player1StartY,playerWidth,playerHeight);
+
+		player2.fillStyle="#FFF";
+		player2.lineWidth = 1
+		player2.fillRect(player2StartX,player2StartY,playerWidth,playerHeight);
+
+
+
+		ball.fillStyle="#FFF";
+		ball.lineWidth = 1
+		ball.fillRect(ballPositionX,ballPositionY,ballSize,ballSize);
+
+		// var borderWidth = 10
+		// var border = gameBoard.getContext("2d");
+		// border.rect(20-borderWidth,20-borderWidth,w-20-borderWidth,h-20-borderWidth);
+		// border.strokeStyle = "white"
+		// border.lineWidth = borderWidth
+		// border.stroke();
+
+
+    }
+
+
+   
+ 
+    var thisPlayer = 1
+
+	function updateUI(){
+
+        player1.fillStyle="#000";
+
+        player1.fillRect(borderWidth, borderWidth, gameBoard.width-borderWidth*2, gameBoard.height-borderWidth*2);
+
+
+        player1.fillStyle="#FFF";
+
+        var ballPositionX = ((window.innerWidth - 2 * borderWidth) - ballSize / 2) * ((ballPosition.x)/100)
+
+		var ballPositionY = ((window.innerHeight - 2 * borderWidth) - ballSize / 2) * ((ballPosition.y)/100)
+
+
+        var yPosCoOrd1 = ((window.innerHeight - 2 * borderWidth) - playerHeight)*(player1Y/100) + borderWidth
+        var yPosCoOrd2 = ((window.innerHeight - 2 * borderWidth) - playerHeight)*(player2Y/100) + borderWidth
+        player1.fillRect(player1StartX,yPosCoOrd1,playerWidth,playerHeight);
+        player2.fillRect(player2StartX,yPosCoOrd2,playerWidth,playerHeight);
+        ball.fillRect(ballPositionX,ballPositionY,ballSize,ballSize);
+        // player1.moveTo(player1StartX,mouse.y)
+        
+	}
+
+
+    window.onresize = function(event) {
+    	gameBoard.width = window.innerWidth;
+		gameBoard.height = window.innerHeight;
+		h = parseInt(gameBoard.getAttribute("height"));
+		w = parseInt(gameBoard.getAttribute("width"));
+        playerHeight = h / 10;
+		setupBoard()
+
+    }
+
+var actualPlayerY = 50;
+
+    function joinClicked(){
+
+
+    	document.getElementById("theBlock").style.display = "none";
+        gameLoop();
+
+
+
+    }
+
+
+
+    function delay(ms) {
+	    return new Promise(function (resolve) { return setTimeout(resolve, ms); });
+	};
+
+
+    var mousePos;
+
+
+    function httpGet(theUrl){
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	    xmlHttp.send( null );
+	    return xmlHttp.responseText;
+	}
+
+
+    var serveraddr = "http://127.0.0.1/pong/api?";
+
+	var uuid = ""
+
+    function gameLoop(){
+        setTimeout(() => {
+			
+            parseData(httpGet(serveraddr + "getGameState&guid="))
+        	gameLoop();
+        }, 25);
+    }
+
+var score = 0;
+
+    function parseData(json){
+
+		//console.log(json)
+
+		var parsedJSON = JSON.parse(json)
+    	if (parsedJSON.rightPlayer != null){
+
+			ballPosition.x = parsedJSON.ballPos.x
+			ballPosition.y = parsedJSON.ballPos.y
+			ballPosition.dy = parsedJSON.ballPos.dy
+			ballPosition.dx = parsedJSON.ballPos.dx
+
+			player1Y = parsedJSON.leftPlayer.y
+			player1DY = parsedJSON.leftPlayer.dy
+			player2Y = parsedJSON.rightPlayer.y
+			player2DY = parsedJSON.rightPlayer.dy
+
+            /*if (parsedJSON.rightPlayer != null){
+                score = parsedJSON.rightPlayer.score;
+            }*/
+
+            if (parsedJSON.leftPlayer != null){
+                score = parsedJSON.leftPlayer.score;
+				document.getElementById("leftLabel").innerHTML = "Current Champion: " + score
+            }
+
+			updateUI()
+		}
+    }
+</script>
+
+
+<script type="text/javascript">
+	var myFullpage = new fullpage('#fullpage', {
+		sectionsColor: ['#F00']
+	});
+</script>
+
+</body>
+</html>
